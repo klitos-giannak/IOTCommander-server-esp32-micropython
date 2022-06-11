@@ -101,11 +101,15 @@ def command_requested(request, response):
                     yield from web.http_error(response, '400')
 
             elif expected_type == PARAM_BOOLEAN:
-                # we don't want to save the result, just validate the type
+                # if valid we want to change to something we can use as python boolean
                 if get_boolean_value(value) is None:
                     reason = "Unable to convert value of param " + param + " to type " + expected_type
                     print(reason + ". Responding with an error.")
                     yield from web.http_error(response, '400')
+                value = str(get_boolean_value(value)) # replace with a python parsable string
+                
+            else: #treat as string
+                value = "'" + value + "'" # wrap in single quotes to be correctly treated as string from python
 
         except ValueError:
             reason = "Invalid param " + param
