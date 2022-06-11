@@ -1,0 +1,29 @@
+{
+  "testString": {
+    "myText": "text",
+    "execute": "executables.testString($myText)"
+  },
+  "testInt": {
+    "myInt": "int",
+    "execute": "executables.testInt($myInt)"
+  },
+  "testFloat": {
+    "myFloat": "float",
+    "execute": "executables.testFloat($myFloat)"
+  },
+  "testBoolean": {
+    "myBoolean": "boolean",
+    "execute": "executables.testBoolean($myBoolean)"
+  },
+  "testNoParams": {
+    "execute": "executables.testNoParams()"
+  },
+  "testAllTypes": {
+    "myInt": "int",
+    "myFloat": "float",
+    "myText": "text",
+    "myBoolean": "boolean",
+    "execute": "executables.testAllTypes($myText, $myFloat, $myInt, $myBoolean)"
+  }
+}
+
